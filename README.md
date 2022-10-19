@@ -12,23 +12,24 @@
 
 ### ターゲットユーザ
 
- - 元々アニメが好きな人
- - アニメを好きになった人
- - キャラクター育成が好きな人
- - 物を集めるのが好きな人
- - 隠れ神アニメを発掘したい人
- - アニメに関する部活やサークルメンバーを含め、他アニメ視聴者とランキング形式で"アニメへの情熱"を競いたい人
+- 元々アニメが好きな人
+- アニメを好きになった人
+- キャラクター育成が好きな人
+- 物を集めるのが好きな人
+- 隠れ神アニメを発掘したい人
+- アニメに関する部活やサークルメンバーを含め、他アニメ視聴者とランキング形式で"アニメへの情熱"を競いたい人
 
 ### 主な利用シーン
 
- - 観るアニメに迷っているとき
- - 自分のアニメへの情熱が本物だと思っているとき
- - どのアニメを観れば良いか分からなくなったとき
- - 知らないジャンルを開拓したいとき
- - 自身が所属するコミュニティで、ただアニメを広めるだけじゃない"特別なこと"がしたい時
+- 観るアニメに迷っているとき
+- 自分のアニメへの情熱が本物だと思っているとき
+- どのアニメを観れば良いか分からなくなったとき
+- 知らないジャンルを開拓したいとき
+- 自身が所属するコミュニティで、ただアニメを広めるだけじゃない"特別なこと"がしたい時
 
 ## 設計書
-掲載予定
+- [ER図](https://drive.google.com/file/d/1XReU3uYpgOhbVjkJaQ22HAqj0AdDeAcJ/view?usp=sharing)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1AmsZ1yJPB7EGjiZuibkxRuHIPlZZqPTcp-N1T93vY6w/edit?usp=sharing)
 
 ## 実装機能リスト
 リストは[こちら](https://docs.google.com/spreadsheets/d/1ui7cRQsYLrmJbussVq6b6Je69bkcSeMT1m5BW7IoXXw/edit?usp=sharing)
@@ -39,6 +40,15 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
+## 導入
+- materialize-sass 1.0.0
+- material_icons
+- kaminari 1.2.1
+- font-awesome 6.1.2
+- jQuery 3.6.1
+- net-smtp
+- ActiveStorage
 
 ## 使用素材
 - 使用検討中です
