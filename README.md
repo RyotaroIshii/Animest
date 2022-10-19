@@ -45,7 +45,7 @@
 - materialize-sass 1.0.0
 - material_icons
 - kaminari 1.2.1
-- font-awesome 6.1.2
+- font-awesome 6.2.0
 - jQuery 3.6.1
 - net-smtp
 - ActiveStorage
