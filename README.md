@@ -49,6 +49,8 @@
 - jQuery 3.6.1
 - net-smtp
 - ActiveStorage
+- better_errors
+- binding_of_caller
 
 ## 使用素材
 - 使用検討中です
