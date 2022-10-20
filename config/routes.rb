@@ -1,19 +1,30 @@
 Rails.application.routes.draw do
-  get 'titles/show'
-  get 'animes/index'
-  get 'animes/year'
-  get 'quests/show'
-  get 'quests/create'
-  get 'quests/complete'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/update'
-  get 'users/title'
-  get 'users/index'
-  get 'users/login'
-  get 'users/logout'
-  get 'homes/top'
-  get 'homes/rank'
-  get 'homes/top'
+
+  root to: "homes#top"
+  get "ranking" => "homes#rank", as: "ranking"
+
+  get "user/:id" => "users#show", as: "user"
+  get "user/:id/edit" => "users#edit", as: "edit_user"
+  patch "user/:id" => "users#update", as: "update_user"
+  get "user/:id/titles" => "users#title", as: "user_titles"
+  get "user/:id/watched_anime" => "users#index", as: "watched_anime"
+  get "login" => "users#login", as: "login"
+  get "logout" => "users#logout", as: "logout"
+
+  get "quest" => "quests#show", as: "quest"
+  post "quest" => "quests#create", as: "create_quest"
+  get "quest_cleared" => "quests#complete", as: "complete"
+
+  get "anime" => "animes#index", as: "index_animes"
+  get "anime/:year" => "animes#year", as: "year"
+
+  get "title/:id" => "titles#show", as: "title"
+
+
+
+
+
+
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
