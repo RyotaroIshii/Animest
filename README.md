@@ -42,11 +42,9 @@
 - IDE：Cloud9
 
 ## 導入
-- materialize-sass 1.0.0
-- material_icons
+- bootstrap 4.5
 - kaminari 1.2.1
 - font-awesome 6.2.0
-- jQuery 3.6.1
 - net-smtp
 - ActiveStorage
 - better_errors
