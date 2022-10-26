@@ -60,3 +60,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'net-smtp'
 
 gem 'kaminari','~> 1.2.1'
+
+gem 'omniauth','~> 1.9.1'
+
+gem 'omniauth-twitter'
+
+gem 'dotenv-rails'

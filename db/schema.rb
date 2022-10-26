@@ -57,10 +57,22 @@ ActiveRecord::Schema.define(version: 2022_10_19_195415) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "twitters", force: :cascade do |t|
+    t.string "uid"
+    t.string "nickname"
+    t.string "name"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
+    t.string "uid"
+    t.string "nickname"
+    t.string "image"
+    t.string "name"
     t.integer "twitter_id", null: false
     t.integer "acquisition_point", null: false
-    t.string "name", null: false
     t.string "introdaction", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

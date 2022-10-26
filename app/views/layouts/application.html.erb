@@ -43,6 +43,13 @@
             </li>
           </ul>
         </div>
+        <div>
+        <% if logged_in? %>
+          <%= link_to 'ログアウト', logout_path %>
+        <% else %>
+          <%= link_to 'ログイン', login_page_path %>
+        <% end %>
+        </div>
       </nav>
     </header>
     <main style="background-color:#ffe682">

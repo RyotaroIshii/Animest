@@ -45,6 +45,9 @@
 - bootstrap 4.5
 - kaminari 1.2.1
 - font-awesome 6.2.0
+- omniauth 1.9.1
+- omniauth-twitter
+- dotenv-rails
 - net-smtp
 - ActiveStorage
 - better_errors
