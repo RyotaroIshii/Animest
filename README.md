@@ -43,7 +43,6 @@
 
 ## 導入
 - bootstrap 4.5
-- bootatrap-
 - kaminari 1.2.1
 - font-awesome 6.2.0
 - omniauth 1.9.1
