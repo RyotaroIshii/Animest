@@ -36,11 +36,13 @@
                 <span class="font-weight-bold p-2" style="background-color:#ffecb3;"><font color="#d9a46f">アニメ一覧</font></span>
               <% end %>
             </li>
+            <% if logged_in? %>
             <li>
               <%= link_to  user_path(:id), class: 'nav-link text-dark' do %>
                 <span class="font-weight-bold p-2" style="background-color:#ffecb3;"><font color="#d9a46f">マイページ</font></span>
               <% end %>
             </li>
+            <% end %>
           </ul>
         </div>
         <div>
