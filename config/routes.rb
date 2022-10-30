@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   patch "user/:id" => "users#update", as: "update_user"
   get "user/:id/titles" => "users#title", as: "user_titles"
   get "user/:id/watched_anime" => "users#index", as: "watched_anime"
+  get "user/:id/avatar_select" => "users#avatar", as: "avatar"
   get "login_page" => "users#login", as: "login_page"
   get "logout_page" => "users#logout", as: "logout_page"
 
