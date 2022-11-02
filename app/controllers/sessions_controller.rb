@@ -8,8 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(uid: user_data[:uid])
     if user
       log_in user
-      flash[:notice] = 'ログインしました'
-      redirect_to root_url
+      redirect_to "https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/user/:uid"
     else
       new_user = User.new(
         uid: user_data[:uid],
@@ -19,18 +18,18 @@ class SessionsController < ApplicationController
       )
       if new_user.save
         log_in new_user
-        flash[:notice] = 'ユーザー登録成功'
+        redirect_to "https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/user/:uid/avatar_select"
       else
         flash[:notice] = '予期せぬエラーが発生しました'
+        redirect_to root_url
       end
-      redirect_to root_url
+
     end
   end
 
 
   def destroy
     log_out if logged_in?
-    flash[:notice] = 'ログアウトしました'
-    redirect_to root_url
+    redirect_to "https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/logout_page"
   end
 end

@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: "homes#top"
   get "ranking" => "homes#rank", as: "ranking"
 
-  get "user/:id" => "users#show", as: "user"
-  get "user/:id/edit" => "users#edit", as: "edit_user"
-  patch "user/:id" => "users#update", as: "update_user"
-  get "user/:id/titles" => "users#title", as: "user_titles"
-  get "user/:id/watched_anime" => "users#index", as: "watched_anime"
-  get "user/:id/avatar_select" => "users#avatar", as: "avatar"
+  get "user/:uid" => "users#show", as: "user"
+  get "user/:uid/edit" => "users#edit", as: "edit_user"
+  patch "user/:uid" => "users#update", as: "update_user"
+  get "user/:uid/titles" => "users#title", as: "user_titles"
+  get "user/:uid/watched_anime" => "users#index", as: "watched_anime"
+  get "user/:uid/avatar_select" => "users#avatar", as: "avatar"
   get "login_page" => "users#login", as: "login_page"
   get "logout_page" => "users#logout", as: "logout_page"
 
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "anime" => "animes#index", as: "index_animes"
   get "anime/:year" => "animes#year", as: "year"
 
-  get "title/:id" => "titles#show", as: "title"
+  get "title/:uid" => "titles#show", as: "title"
 
 
   get '/auth/:provider/callback', to: 'sessions#create'
