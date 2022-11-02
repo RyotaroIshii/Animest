@@ -1,4 +1,5 @@
 <div class="countainer-fluid">
+  <% if new_user_logged_in? %>
   <div class="row py-2">
     <div class="col-12 text-center">
       <h3 class="py-2 m-0">アバターを選択しよう！</h3>
@@ -36,4 +37,26 @@
       <div class="offset-1"></div>
     </div>
   </div>
+  <% elsif user_logged_in? %>
+  <div class="row">
+    <div class="mx-auto">
+      <div class="text-center">
+        <h5>新規ユーザーではないアカウントからの遷移が確認されました。<br>
+        このページはアカウント連携初回のユーザーを対象としております。<br>
+        お手数ですが、お使いのブラウザの「戻る」機能にて前ページに戻るか、「<a href="/">こちら</a>」
+        及びページ左上のロゴを選択しトップページに遷移していただくようお願いします。<br>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <div class="row">
+    <div class="mx-auto">
+      <div class="text-center">
+        <h5>ページ右上のアイコン及び<a href="/login_page">こちら</a>よりログインしてください<br>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>
