@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "user/:uid/titles" => "users#title", as: "user_titles"
   get "user/:uid/watched_anime" => "users#index", as: "watched_anime"
   get "user/:uid/avatar_select" => "users#avatar", as: "avatar"
+  post "user/:uid" => "users#create", as: "create_avatar"
   get "login_page" => "users#login", as: "login_page"
   get "logout_page" => "users#logout", as: "logout_page"
 

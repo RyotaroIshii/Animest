@@ -1,5 +1,4 @@
 <div class="countainer-fluid">
-  <% if new_user_logged_in? %>
   <div class="row py-2">
     <div class="col-12 text-center">
       <h3 class="py-2 m-0">アバターを選択しよう！</h3>
@@ -8,55 +7,35 @@
   </div>
   <div class="row pb-3">
     <div class="offset-1"></div>
-      <div class="card-deck col-10">
-        <div class="card">
-          <%= image_tag '3-1', :class => "card-img-top"%>
-          <div class="card-body">
-            <h5 class="card-title">ゴブリン</h5>
-            <p class="card-text">森の中に潜む弱い魔物<br>人にも魔物にも侮られていて、討伐すらされない<br>いつか見返してやりたいと思って、日々努力している</p>
-            <p class="card-text">初心者向け<small class="text-muted">必要経験値少</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag '2-1', :class => "card-img-top"%>
-          <div class="card-body">
-            <h5 class="card-title">女村人</h5>
-            <p class="card-text">とある村の住人<br>外の世界を見てみたいと思っていたところ、街からやってきた神官に魔法の才能を見出された<br>修行を兼ね、旅に出る決意をした</p>
-            <p class="card-text">中級者向け<small class="text-muted">必要経験値並</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <%= image_tag '1-1', :class => "card-img-top"%>
-          <div class="card-body">
-            <h5 class="card-title">男村人</h5>
-            <p class="card-text">とある村の住人<br>ある日教会で天啓が降り、自分が勇者であることがわかった<br>人々を救うため、魔王討伐の旅に出ることにした</p>
-            <p class="card-text">上級者向け<small class="text-muted">必要経験値多</small></p>
-          </div>
+    <div class="card-deck col-10">
+      <div class="card">
+        <%= form_with model: @user, url: create_avatar_path, method: :post do |f| %>
+        <%= image_tag '3-1', :class => "card-img-top"%>
+        <div class="card-body">
+          <h5 class="card-title">ゴブリン</h5>
+          <p class="card-text">森の中に潜む弱い魔物<br>人にも魔物にも侮られていて、討伐すらされない<br>いつか見返してやりたいと思って、日々努力している</p>
+          <p class="card-text">初心者向け<small class="text-muted">必要経験値少</small></p>
+        <%= f.submit 'これに決めた', :class =>"btn btn-success mt-1 ml-5" %>
+        <% end %>
         </div>
       </div>
-      <div class="offset-1"></div>
-    </div>
-  </div>
-  <% elsif user_logged_in? %>
-  <div class="row">
-    <div class="mx-auto">
-      <div class="text-center">
-        <h5>新規ユーザーではないアカウントからの遷移が確認されました。<br>
-        このページはアカウント連携初回のユーザーを対象としております。<br>
-        お手数ですが、お使いのブラウザの「戻る」機能にて前ページに戻るか、「<a href="/">こちら</a>」
-        及びページ左上のロゴを選択しトップページに遷移していただくようお願いします。<br>
-        </h5>
+      <div class="card">
+        <%= image_tag '2-1', :class => "card-img-top"%>
+        <div class="card-body">
+          <h5 class="card-title">女村人</h5>
+          <p class="card-text">とある村の住人<br>外の世界を見てみたいと思っていたところ、街からやってきた神官に魔法の才能を見出された<br>修行を兼ね、旅に出る決意をした</p>
+          <p class="card-text">中級者向け<small class="text-muted">必要経験値並</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <%= image_tag '1-1', :class => "card-img-top"%>
+        <div class="card-body">
+          <h5 class="card-title">男村人</h5>
+          <p class="card-text">とある村の住人<br>ある日教会で天啓が降り、自分が勇者であることがわかった<br>人々を救うため、魔王討伐の旅に出ることにした</p>
+          <p class="card-text">上級者向け<small class="text-muted">必要経験値多</small></p>
+        </div>
       </div>
     </div>
+    <div class="offset-1"></div>
   </div>
-  <% else %>
-  <div class="row">
-    <div class="mx-auto">
-      <div class="text-center">
-        <h5>ページ右上のアイコン及び<a href="/login_page">こちら</a>よりログインしてください<br>
-        </h5>
-      </div>
-    </div>
-  </div>
-  <% end %>
 </div>
