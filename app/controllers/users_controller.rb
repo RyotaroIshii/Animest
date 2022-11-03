@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:uid])
+    @user = current_user
   end
 
   def edit
   end
-  
+
   def update
   end
 
@@ -34,11 +34,11 @@ class UsersController < ApplicationController
 
   def logout
   end
-  
+
   private
 
   def user_params
     params.require(:user).permit(:uid, :avatar)
   end
-  
+
 end

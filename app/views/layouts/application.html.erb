@@ -40,7 +40,7 @@
             </li>
             <% if logged_in? %>
             <li>
-              <%= link_to  user_path(:id), class: 'nav-link text-dark' do %>
+              <%= link_to  user_path(:uid), class: 'nav-link text-dark' do %>
                 <span class="font-weight-bold p-2" style="background-color:#ffecb3;"><font color="#d9a46f">マイページ</font></span>
               <% end %>
             </li>
@@ -49,7 +49,11 @@
         </div>
         <div>
         <% if logged_in? %>
-          <%= link_to 'ログアウト', logout_path %>
+          <% if @user.image? %>
+            <%= link_to image_tag @user.image_url.get_image(32,32), logout_path %>
+          <% else %>
+            <a href="/logout"><i class="fa-solid fa-user fa-2x" style="color:rgba(0,0,0,1);"></i></a>
+          <% end %>
         <% else %>
           <a href="/login_page"><i class="fa-solid fa-circle-user fa-2x" style="color:rgba(0,0,0,0.5);"></i></a>
         <% end %>
