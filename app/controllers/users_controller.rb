@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:uid])
+    @user = current_user
     @users = User.all
   end
 
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = current_user
+    # if @user.avatar == nil
     @user.assign_attributes(avatar: params[:user][:avatar])
     @user.save
     redirect_to user_path(current_user)
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:id, :uid, :avatar)
+    params.require(:user).permit(:name, :avatar)
   end
 
 end

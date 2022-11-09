@@ -1,4 +1,5 @@
 <div class="countainer-fluid">
+  <% if logged_in? && current_user.avatar == nil %>
   <div class="row py-2">
     <div class="col-12 text-center">
       <h3 class="py-2 m-0">アバターを選択しよう！</h3>
@@ -28,7 +29,7 @@
         <%= image_tag '2-1', :class => "card-img-top"%>
         <div class="card-body">
           <h5 class="card-title">女村人</h5>
-          <p class="card-text">とある村の住人<br>外の世界を見てみたいと思っていたところ、街からやってきた神官に魔法の才能を見出された<br>修行を兼ね、旅に出る決意をした</p>
+          <p class="card-text">とある村の住人<br>村の外を見てみたいと思っていたところ、街からやってきた神官に魔法の才能を見出された<br>修行を兼ね、旅に出る決意をした</p>
           <p class="card-text">中級者向け<small class="text-muted">必要経験値並</small></p>
         </div>
         <div class="card-footer text-center">
@@ -53,4 +54,27 @@
     </div>
     <div class="offset-1"></div>
   </div>
+  <% elsif logged_in? %>
+  <div class="row">
+    <div class="mx-auto">
+      <p class="text-center" style="font-size: 70px;"><strong>アバター選択済みです</strong></p>
+      <div class="text-center">
+        <h5><%= current_user.name %>さんは、既にアバターを選択しています。 <br>
+            アバターの再選択はできませんので、お手数ですがヘッダー各種ボタン及び下記ロゴより別のページに遷移してください。<br>
+            これからも「アニメスト」をよろしくお願いいたします。<br>
+        </h5>
+        <%= link_to image_tag("top-logo", width: '50%', height: '50%'), "/" %>
+        <br>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <div class="row">
+    <div class="mx-auto">
+      <p class="text-center" style="font-size: 70px;"><strong>右上アイコン及び</strong>
+      <a href="/auth/twitter" class="btn btn-sm btn-primary"><i class="fa-brands fa-twitter mr-1"></i> アカウント連携</a>
+      <strong>からログインしてください</strong></p>
+    </div>
+  </div>
+  <% end %>
 </div>

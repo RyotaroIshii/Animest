@@ -40,7 +40,7 @@
             </li>
             <% if logged_in? %>
             <li>
-              <%= link_to  user_path(:uid), class: 'nav-link text-dark' do %>
+              <%= link_to  user_path(:id), class: 'nav-link text-dark' do %>
                 <span class="font-weight-bold p-2" style="background-color:#ffecb3;"><font color="#d9a46f">マイページ</font></span>
               <% end %>
             </li>
@@ -56,7 +56,7 @@
         </div>
       </nav>
     </header>
-    <main style="background-color:#ffe682">
+    <main style="background-color:#ffe682; height:100%;">
       <%= yield %>
     </main>
     <footer style="background-color:#ffe082;">
