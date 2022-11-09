@@ -12,14 +12,9 @@ class UsersController < ApplicationController
 
   def create
     @user = current_user
-    # if @user.avatar == nil
     @user.assign_attributes(avatar: params[:user][:avatar])
     @user.save
     redirect_to user_path(current_user)
-    # else
-    #   render :avatar
-    #   flash[:notice] = '正常に更新されませんでした、もう一度選択してください。'
-    # end
   end
 
   def title
