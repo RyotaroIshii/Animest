@@ -7,32 +7,47 @@
   </div>
   <div class="row pb-3">
     <div class="offset-1"></div>
-    <div class="card-deck col-10">
+    <div class="card-deck d-flex  col-10">
       <div class="card">
         <%= form_with model: @user, url: create_avatar_path, method: :post do |f| %>
+        <%= f.hidden_field :avatar, :value => '3-1' %>
         <%= image_tag '3-1', :class => "card-img-top"%>
         <div class="card-body">
           <h5 class="card-title">ゴブリン</h5>
           <p class="card-text">森の中に潜む弱い魔物<br>人にも魔物にも侮られていて、討伐すらされない<br>いつか見返してやりたいと思って、日々努力している</p>
           <p class="card-text">初心者向け<small class="text-muted">必要経験値少</small></p>
-        <%= f.submit 'これに決めた', :class =>"btn btn-success mt-1 ml-5" %>
+        </div>
+        <div class="card-footer text-center">
+        <%= f.submit 'ゴブリンに決めた', :class =>"btn btn-success" %>
         <% end %>
         </div>
       </div>
       <div class="card">
+        <%= form_with model: @user, url: create_avatar_path, method: :post do |f| %>
+        <%= f.hidden_field :avatar, :value => '2-1' %>
         <%= image_tag '2-1', :class => "card-img-top"%>
         <div class="card-body">
           <h5 class="card-title">女村人</h5>
           <p class="card-text">とある村の住人<br>外の世界を見てみたいと思っていたところ、街からやってきた神官に魔法の才能を見出された<br>修行を兼ね、旅に出る決意をした</p>
           <p class="card-text">中級者向け<small class="text-muted">必要経験値並</small></p>
         </div>
+        <div class="card-footer text-center">
+        <%= f.submit '女村人に決めた', :class =>"btn btn-success" %>
+        <% end %>
+        </div>
       </div>
       <div class="card">
+        <%= form_with model: @user, url: create_avatar_path, method: :post do |f| %>
+        <%= f.hidden_field :avatar, :value => '1-1' %>
         <%= image_tag '1-1', :class => "card-img-top"%>
         <div class="card-body">
           <h5 class="card-title">男村人</h5>
           <p class="card-text">とある村の住人<br>ある日教会で天啓が降り、自分が勇者であることがわかった<br>人々を救うため、魔王討伐の旅に出ることにした</p>
           <p class="card-text">上級者向け<small class="text-muted">必要経験値多</small></p>
+        </div>
+        <div class="card-footer text-center">
+        <%= f.submit '男村人に決めた', :class =>"btn btn-success" %>
+        <% end %>
         </div>
       </div>
     </div>

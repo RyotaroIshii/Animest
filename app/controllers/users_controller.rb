@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find(params[:uid])
+    @users = User.all
   end
 
   def edit
@@ -11,12 +12,13 @@ class UsersController < ApplicationController
 
   def create
     @user = current_user
-    if User.save
-      redirect_to user_path(current_user)
-    else
-      render :avatar
-      flash[:notice] = '正常に更新されませんでした、もう一度選択してください。'
-    end
+    @user.assign_attributes(avatar: params[:user][:avatar])
+    @user.save
+    redirect_to user_path(current_user)
+    # else
+    #   render :avatar
+    #   flash[:notice] = '正常に更新されませんでした、もう一度選択してください。'
+    # end
   end
 
   def title
@@ -27,6 +29,7 @@ class UsersController < ApplicationController
 
   def avatar
     @user = current_user
+
   end
 
   def login
@@ -38,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:uid, :avatar)
+    params.require(:user).permit(:id, :uid, :avatar)
   end
 
 end
