@@ -66,3 +66,5 @@ gem 'omniauth','~> 1.9.1'
 gem 'omniauth-twitter'
 
 gem 'dotenv-rails'
+
+gem 'graphql-client'

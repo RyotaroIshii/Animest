@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(uid: user_data[:uid])
     if user
       log_in user
-      redirect_to "https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/user/:id"
+      redirect_to user_path(current_user.uid)
     else
       new_user = User.new(
         uid: user_data[:uid],
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       )
       if new_user.save
         log_in new_user
-        redirect_to "https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/user/:id/avatar_select"
+        redirect_to avatar_path(current_user.uid)
       else
         flash[:notice] = '予期せぬエラーが発生しました'
         redirect_to root_url
@@ -30,6 +30,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    redirect_to "https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/logout_page"
+    redirect_to 'https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/logout_page'
   end
 end

@@ -48,6 +48,7 @@
 - omniauth 1.9.1
 - omniauth-twitter
 - dotenv-rails
+- graphql-client
 - net-smtp
 - ActiveStorage
 - better_errors

@@ -1,6 +1,8 @@
 require_relative "boot"
 
 require "rails/all"
+require "graphql/client"
+require "graphql/client/http"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -19,4 +21,13 @@ module Animest
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
   end
+
+  AUTH_HEADER = "Bearer dCXez122WWdr8vPM9YE0jd1xj24O0wgxGqEO_WJauwI"
+  HTTP = GraphQL::Client::HTTP.new("https://api.annict.com/graphql") do
+    def headers(context)
+      { "Authorization": AUTH_HEADER }
+    end
+  end
+  Schema = GraphQL::Client.load_schema(HTTP)
+  Client = GraphQL::Client.new(schema: Schema, execute: HTTP)
 end
