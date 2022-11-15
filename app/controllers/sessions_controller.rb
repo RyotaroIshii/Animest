@@ -30,6 +30,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
-    redirect_to 'https://0d48985d451545af975e615bb79ea406.vfs.cloud9.ap-northeast-1.amazonaws.com/logout_page'
+    redirect_to logout_page_path
   end
 end

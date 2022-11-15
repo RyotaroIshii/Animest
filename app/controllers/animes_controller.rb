@@ -18,6 +18,7 @@ class AnimesController < ApplicationController
     edges {
       node {
         title
+        seasonYear
       }
     }
   }

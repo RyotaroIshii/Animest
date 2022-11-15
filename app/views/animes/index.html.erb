@@ -1,3 +1,10 @@
-  <% @animes.each do |anime|%>
-    <p><%= anime.node.title %></p>
-  <% end %>
+<% @animes.each do |anime|%>
+<ul>
+  <li>
+    <%= anime.node.title %>
+  </li>
+  <li>
+    <%= anime.node.season_year %>
+  </li>
+</ul>
+<% end %>
