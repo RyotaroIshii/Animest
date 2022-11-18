@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
         nickname: user_data[:info][:nickname],
         name: user_data[:info][:name],
         image: user_data[:info][:image],
+        description: user_data[:info][:description],
       )
       if new_user.save
         log_in new_user
