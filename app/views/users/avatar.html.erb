@@ -19,7 +19,27 @@
           <p class="card-text"><small class="text-muted">アニ活初心者向け</small></p>
         </div>
         <div class="card-footer text-center">
-        <%= f.submit 'ゴブリンに決めた', :class =>"btn btn-success" %>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#goblinModal">ゴブリンに決めた</button>
+          <div class="modal fade" id="goblinModal" tabindex="-1" role="dialog" aria-labelledby="goblinModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="goblinModalLabel">確認</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  ゴブリンでよろしいですか？<br>
+                  <small>※選択後の変更はできません</small>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
+                  <%= f.submit '決定', :class =>"btn btn-success" %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
         </div>
       </div>
@@ -33,7 +53,27 @@
           <p class="card-text"><small class="text-muted">アニ活中級者向け</small></p>
         </div>
         <div class="card-footer text-center">
-        <%= f.submit '女村人に決めた', :class =>"btn btn-success" %>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#girlModal">女村人に決めた</button>
+          <div class="modal fade" id="girlModal" tabindex="-1" role="dialog" aria-labelledby="girlModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="girlModalLabel">確認</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  女村人でよろしいですか？<br>
+                  <small>※選択後の変更はできません</small>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
+                  <%= f.submit '決定', :class =>"btn btn-success" %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
         </div>
       </div>
@@ -47,7 +87,27 @@
           <p class="card-text"><small class="text-muted">アニ活上級者向け</small></p>
         </div>
         <div class="card-footer text-center">
-        <%= f.submit '男村人に決めた', :class =>"btn btn-success" %>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#manModal">男村人に決めた</button>
+          <div class="modal fade" id="manModal" tabindex="-1" role="dialog" aria-labelledby="manModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="manModalLabel">確認</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  男村人でよろしいですか？<br>
+                  <small>※選択後の変更はできません</small>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
+                  <%= f.submit '決定', :class =>"btn btn-success" %>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
         </div>
       </div>

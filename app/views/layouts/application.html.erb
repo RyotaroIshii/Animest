@@ -40,8 +40,8 @@
             </li>
             <% if logged_in? %>
             <li>
-              <%= link_to  user_path(:id), class: 'nav-link text-dark' do %>
-                <span class="font-weight-bold p-2" style="background-color:#ffecb3;"><font color="#d9a46f">マイページ</font></span>
+              <%= link_to  logout_path, class: 'nav-link text-dark', data: { confirm: "ログアウトしますか？" } do %>
+                <span class="font-weight-bold p-2" style="background-color:#ffecb3;"><font color="#d9a46f">ログアウト</font></span>
               <% end %>
             </li>
             <% end %>
@@ -49,7 +49,7 @@
         </div>
         <div>
         <% if logged_in? %>
-          <%= link_to image_tag(current_user.image, alt: "ログアウト", :class => "rounded-circle"), "/logout" %>
+          <%= link_to image_tag(current_user.image, alt: "マイページ", :class => "rounded-circle"), user_path(current_user.uid) %>
         <% else %>
           <a href="/login_page"><i class="fa-solid fa-circle-user fa-2x" style="color:rgba(0,0,0,0.5);"></i></a>
         <% end %>

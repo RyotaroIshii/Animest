@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user.assign_attributes(avatar: params[:user][:avatar])
     @user.save
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user.uid)
   end
 
   def title
