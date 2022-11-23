@@ -5,9 +5,9 @@
 
   <% if @user.acquisition_point <= 500 %>
     <%= image_tag '1-1' %>
-  <% elsif @user.acquisition_point >= 501 && @user.acquisition_point <= 1200 %>
+  <% elsif @user.acquisition_point >= 510 && @user.acquisition_point <= 1200 %>
     <%= image_tag '1-2' %>
-  <% elsif @user.acquisition_point >= 1201 %>
+  <% elsif @user.acquisition_point >= 1210 %>
     <%= image_tag '1-3' %>
   <% end %>
 
@@ -15,11 +15,11 @@
 
   <% if @user.acquisition_point <= 200 %>
     <%= image_tag '2-1' %>
-  <% elsif @user.acquisition_point >= 201 && @user.acquisition_point <= 450 %>
+  <% elsif @user.acquisition_point >= 210 && @user.acquisition_point <= 450 %>
     <%= image_tag '2-2' %>
-  <% elsif @user.acquisition_point >= 451 && @user.acquisition_point <= 800 %>
+  <% elsif @user.acquisition_point >= 460 && @user.acquisition_point <= 800 %>
     <%= image_tag '2-3' %>
-  <% elsif @user.acquisition_point >= 801 %>
+  <% elsif @user.acquisition_point >= 810 %>
     <%= image_tag '2-4' %>
   <% end %>
 
@@ -27,13 +27,13 @@
 
   <% if @user.acquisition_point <= 50 %>
     <%= image_tag '3-1' %>
-  <% elsif @user.acquisition_point >= 51 && @user.acquisition_point <= 150 %>
+  <% elsif @user.acquisition_point >= 60 && @user.acquisition_point <= 150 %>
     <%= image_tag '3-2' %>
-  <% elsif @user.acquisition_point >= 151 && @user.acquisition_point <= 270 %>
+  <% elsif @user.acquisition_point >= 160 && @user.acquisition_point <= 270 %>
     <%= image_tag '3-3' %>
-  <% elsif @user.acquisition_point >= 271 && @user.acquisition_point <= 420 %>
+  <% elsif @user.acquisition_point >= 280 && @user.acquisition_point <= 420 %>
     <%= image_tag '3-4' %>
-  <% elsif @user.acquisition_point >= 421 %>
+  <% elsif @user.acquisition_point >= 430 %>
     <%= image_tag '3-5' %>
   <% end %>
 
