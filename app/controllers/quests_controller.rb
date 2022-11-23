@@ -27,9 +27,16 @@ class QuestsController < ApplicationController
 
   def show
     @quests = result.data.search_works.edges
+    @user = current_user
+    
   end
 
-  def create
+  def update
+    @user.uid = current_user.uid
+    if submit?
+      @user.acquisition_point + 10
+    @user.update(user_params)
+    redirect_to complete_path
   end
 
   def complete
