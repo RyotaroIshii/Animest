@@ -28,13 +28,12 @@ class QuestsController < ApplicationController
   def show
     @quests = result.data.search_works.edges
     @user = current_user
-    
+
   end
 
   def update
-    @user.uid = current_user.uid
-    if submit?
-      @user.acquisition_point + 10
+    @user = current_user
+    @user.acquisition_point += 10
     @user.update(user_params)
     redirect_to complete_path
   end
@@ -43,6 +42,10 @@ class QuestsController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:name,:avatar, :acquisition_point)
+  end
 
   def result
     response = Animest::Client.query(Query)
