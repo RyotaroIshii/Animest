@@ -17,49 +17,60 @@
     <% end %>
     <div class="offset-1"></div>
   </div>
-  <div class="row">
-    <div class="col-12">
-
+  <div class="row pb-2">
+    <div class="col-12 text-center">
+      タイトル設置する
     </div>
   </div>
-<%= @user.name %>
-<%= @user.description %>
-<%= @user.acquisition_point %>
+  <div class="row pb-2">
+    <div class="col-12 text-center">
+    <% if @user.avatar == '1-1' %>
+      <% if @user.acquisition_point <= 500 %>
+        <%= image_tag '1-1' %>
+      <% elsif @user.acquisition_point >= 510 && @user.acquisition_point <= 1200 %>
+        <%= image_tag '1-2' %>
+      <% elsif @user.acquisition_point >= 1210 %>
+        <%= image_tag '1-3' %>
+      <% end %>
+    <% elsif @user.avatar == '2-1' %>
+      <% if @user.acquisition_point <= 200 %>
+        <%= image_tag '2-1' %>
+      <% elsif @user.acquisition_point >= 210 && @user.acquisition_point <= 450 %>
+        <%= image_tag '2-2' %>
+      <% elsif @user.acquisition_point >= 460 && @user.acquisition_point <= 800 %>
+        <%= image_tag '2-3' %>
+      <% elsif @user.acquisition_point >= 810 %>
+        <%= image_tag '2-4' %>
+      <% end %>
+    <% elsif @user.avatar == '3-1' %>
+      <% if @user.acquisition_point <= 50 %>
+        <%= image_tag '3-1' %>
+      <% elsif @user.acquisition_point >= 60 && @user.acquisition_point <= 150 %>
+         <%= image_tag '3-2' %>
+      <% elsif @user.acquisition_point >= 160 && @user.acquisition_point <= 270 %>
+        <%= image_tag '3-3' %>
+      <% elsif @user.acquisition_point >= 280 && @user.acquisition_point <= 420 %>
+        <%= image_tag '3-4' %>
+      <% elsif @user.acquisition_point >= 430 %>
+        <%= image_tag '3-5' %>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="col-12 text-center">
+      <label>獲得経験値</label><%= @user.acquisition_point %>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="raw">
+    <div class="offset-3 col-7">
+      <div class="row">
+        <label class="col-2 mb-0" style="font-size: 14px;">名前</label><p class="border-bottom"><%= @user.name %></p>
+      </div>
+      <div class="row">
+        <label class="col-2 mb-0" style="font-size: 14px;">自己紹介</label><%= @user.description %>
+      </div>
+    <div class="offset-3"></div>
+  </div>
+</div>
 
-<% if @user.avatar == '1-1' %>
-
-  <% if @user.acquisition_point <= 500 %>
-    <%= image_tag '1-1' %>
-  <% elsif @user.acquisition_point >= 510 && @user.acquisition_point <= 1200 %>
-    <%= image_tag '1-2' %>
-  <% elsif @user.acquisition_point >= 1210 %>
-    <%= image_tag '1-3' %>
-  <% end %>
-
-<% elsif @user.avatar == '2-1' %>
-
-  <% if @user.acquisition_point <= 200 %>
-    <%= image_tag '2-1' %>
-  <% elsif @user.acquisition_point >= 210 && @user.acquisition_point <= 450 %>
-    <%= image_tag '2-2' %>
-  <% elsif @user.acquisition_point >= 460 && @user.acquisition_point <= 800 %>
-    <%= image_tag '2-3' %>
-  <% elsif @user.acquisition_point >= 810 %>
-    <%= image_tag '2-4' %>
-  <% end %>
-
-<% elsif @user.avatar == '3-1' %>
-
-  <% if @user.acquisition_point <= 50 %>
-    <%= image_tag '3-1' %>
-  <% elsif @user.acquisition_point >= 60 && @user.acquisition_point <= 150 %>
-    <%= image_tag '3-2' %>
-  <% elsif @user.acquisition_point >= 160 && @user.acquisition_point <= 270 %>
-    <%= image_tag '3-3' %>
-  <% elsif @user.acquisition_point >= 280 && @user.acquisition_point <= 420 %>
-    <%= image_tag '3-4' %>
-  <% elsif @user.acquisition_point >= 430 %>
-    <%= image_tag '3-5' %>
-  <% end %>
-
-<% end %>

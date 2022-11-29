@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_195415) do
   create_table "titles", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "need_point", null: false
-    t.string "title", null: false
+    t.string "title", default: "称号なし", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

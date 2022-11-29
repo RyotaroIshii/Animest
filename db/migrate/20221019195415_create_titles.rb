@@ -4,7 +4,7 @@ class CreateTitles < ActiveRecord::Migration[6.1]
 
       t.integer :user_id   , null: false
       t.integer :need_point, null: false
-      t.string  :title     , null: false
+      t.string  :title     , null: false, default: "称号なし"
 
       t.timestamps
     end

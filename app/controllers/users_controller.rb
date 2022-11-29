@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @users = User.all
+    @titles = Title.all
   end
 
   def edit
@@ -37,7 +38,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :avatar)
+    params.require(:user).permit(:id, :uid, :name, :avatar)
+  end
+
+  def title_params
+    params.require(:title).permit(:title_id, :title)
+
   end
 
 end
