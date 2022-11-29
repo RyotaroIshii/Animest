@@ -34,7 +34,7 @@ class QuestsController < ApplicationController
   def update
     @user = current_user
     @user.acquisition_point += 10
-    @user.update(user_params)
+    @user.save
     redirect_to complete_path
   end
 
@@ -43,8 +43,12 @@ class QuestsController < ApplicationController
 
   private
 
+  def quest_params
+    params.require(:quest).permit(:user_id, :change_count, )
+  end
+
   def user_params
-    params.require(:user).permit(:name,:avatar, :acquisition_point)
+    params.require(:user).permit(:id, :uid, :name, :image, :avatar, :acquisition_point)
   end
 
   def result
