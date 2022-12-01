@@ -6,9 +6,7 @@
       <h1 class="font-weight-bold"><%= image_tag current_user.image, :class => "rounded-circle" %>マイページ</h1>
     </div>
     <div class="col-1">
-      <%= link_to edit_user_path, method: :get do %>
-        <i class="fa-solid fa-gears fa-3x text-dark"></i>
-      <% end %>
+      <%= link_to image_tag('gear', width: '110%', height: '100%' ), edit_user_path %>
     </div>
     <% else %>
     <div class="col-10">
@@ -18,8 +16,8 @@
     <div class="offset-1"></div>
   </div>
   <div class="row pb-2">
-    <div class="col-12 text-center">
-      タイトル設置する
+    <div class="col-12 d-flex align-items-center justify-content-center">
+      <%= image_tag 'title0', width: '25%', height: '70%' %>
     </div>
   </div>
   <div class="row pb-2">
