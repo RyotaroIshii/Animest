@@ -2,13 +2,16 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @users = User.all
-    @titles = Title.all
   end
 
   def edit
+
   end
 
   def update
+    @user = current_user
+    @user.update(user_params)
+    redirect_to user_path(current_user.uid)
   end
 
   def create
@@ -38,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:id, :uid, :name, :avatar)
+    params.require(:user).permit(:id, :uid, :name, :avatar, :title, :description)
   end
 
   def title_params

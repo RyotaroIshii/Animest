@@ -17,7 +17,11 @@
   </div>
   <div class="row pb-2">
     <div class="col-12 d-flex align-items-center justify-content-center">
+    <% if @user.title == nil %>
       <%= image_tag 'title0', width: '25%', height: '70%' %>
+    <% else %>
+      <%= @user.title %>
+    <% end %>
     </div>
   </div>
   <div class="row pb-2">

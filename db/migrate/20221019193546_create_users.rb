@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string  :image
       t.string  :name
       t.string  :avatar
+      t.string  :title
       t.string  :description
       t.integer :acquisition_point, null: false, default: 0
 

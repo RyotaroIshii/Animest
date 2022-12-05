@@ -1,6 +1,6 @@
 class TitlesController < ApplicationController
   def show
-    @title = Title.new(title: "title0.png")
+    @title = Title.new
     @titles = Title.all
   end
 
