@@ -17,10 +17,26 @@
   </div>
   <div class="row pb-2">
     <div class="col-12 d-flex align-items-center justify-content-center">
-    <% if @user.title == nil %>
+    <% if @user.title == 1 %>
+      <%= image_tag 'title1', width: '40%', height: '85%' %>
+    <% elsif @user.title == 2 %>
+      <%= image_tag 'title2', width: '40%', height: '85%' %>
+    <% elsif @user.title == 3 %>
+      <%= image_tag 'title3', width: '40%', height: '85%' %>
+    <% elsif @user.title == 4 %>
+      <%= image_tag 'title4', width: '40%', height: '85%' %>
+    <% elsif @user.title == 5 %>
+      <%= image_tag 'title5', width: '40%', height: '85%' %>
+    <% elsif @user.title == 6 %>
+      <%= image_tag 'title6', width: '40%', height: '85%' %>
+    <% elsif @user.title == 7 %>
+      <%= image_tag 'title7', width: '40%', height: '85%' %>
+    <% elsif @user.title == 8 %>
+      <%= image_tag 'title8', width: '25%', height: '70%' %>
+    <% elsif @user.title == 9 %>
+      <%= image_tag 'title9', width: '40%', height: '85%' %>
+    <% else @user.title == nil %>
       <%= image_tag 'title0', width: '25%', height: '70%' %>
-    <% else %>
-      <%= @user.title %>
     <% end %>
     </div>
   </div>
@@ -58,14 +74,27 @@
       <% end %>
     <% end %>
     </div>
-    <div class="col-12 text-center">
-      <label>獲得経験値</label><%= @user.acquisition_point %>
+  </div>
+    <div class="raw py-0">
+      <div class="offset-3 col-6">
+        <table class="table table-sm table-borderless m-auto">
+          <tbody>
+            <tr>
+              <td class="text-right pr-1">獲得経験値:</th>
+              <td class="pl-1"><%= @user.acquisition_point %>ポイント</td>
+            </tr>
+            <tr>
+              <td class="text-right pr-1">ジョブチェンジまで:</th>
+              <td class="pl-1">あと<%= @user.description %>ポイント</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
 <div class="container">
-  <div class="raw">
-    <div class="offset-4 col-6">
+  <div class="raw py-3">
+    <div class="offset-3 col-6">
       <table class="table table-borderless m-auto">
         <tbody>
           <tr>

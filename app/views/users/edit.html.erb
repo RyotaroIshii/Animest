@@ -13,8 +13,17 @@
       <%= form_with model: @user, url: update_user_path, method: :patch do |f| %>
         <div class="form-group">
           <label for="user_title">称号</label>
-          <%= f.label :title,"獲得称号はこちら" %><br>
-          <div class="ml-3"><%= f.select :title, , :prompt => "選択" %></div>
+          <div class="form-row">
+            <div class="col-4"><%= f.radio_button :title, '1' %><%= image_tag 'title1', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '2' %><%= image_tag 'title2', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '3' %><%= image_tag 'title3', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '4' %><%= image_tag 'title4', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '5' %><%= image_tag 'title5', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '6' %><%= image_tag 'title6', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '7' %><%= image_tag 'title7', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '8' %><%= image_tag 'title8', width: '90%', height: '90%' %></div>
+            <div class="col-4"><%= f.radio_button :title, '9' %><%= image_tag 'title9', width: '90%', height: '90%' %></div>
+          </div>
         </div>
         <div class="form-group">
           <label for="user_name">名前</label>
@@ -25,7 +34,7 @@
           <%= f.text_area :description, :class => "form-control description" %>
         </div>
         <div class="d-flex justify-content-around">
-        <%= link_to image_tag('back', width: '50%', height: '95%' ), :back %>
+        <%= link_to image_tag('back', width: '50%', height: '95%' ), user_path(current_user.uid) %>
         <%= image_submit_tag('update', width: '35%', height: '70%') %>
         </div>
       <% end %>

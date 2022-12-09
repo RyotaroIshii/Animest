@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_195415) do
     t.string "image"
     t.string "name"
     t.string "avatar"
-    t.string "title"
+    t.integer "title"
     t.string "description"
     t.integer "acquisition_point", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
