@@ -28,7 +28,6 @@ class QuestsController < ApplicationController
   def show
     @quests = result.data.search_works.edges
     @user = current_user
-
   end
 
   def update

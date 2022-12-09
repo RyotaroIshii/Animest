@@ -35,7 +35,7 @@
       <%= image_tag 'title8', width: '25%', height: '70%' %>
     <% elsif @user.title == 9 %>
       <%= image_tag 'title9', width: '40%', height: '85%' %>
-    <% else @user.title == nil %>
+    <% else %>
       <%= image_tag 'title0', width: '25%', height: '70%' %>
     <% end %>
     </div>
@@ -85,7 +85,39 @@
             </tr>
             <tr>
               <td class="text-right pr-1">ジョブチェンジまで:</th>
-              <td class="pl-1">あと<%= @user.description %>ポイント</td>
+              <td class="pl-1">
+              <% if @user.avatar == '1-1' %>
+                <% if @user.acquisition_point <= 500 %>
+                  あと<%= 510 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 510 && @user.acquisition_point <= 1200 %>
+                  あと<%= 1210 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 1210 %>
+                  ーーーー
+                <% end %>
+              <% elsif @user.avatar == '2-1' %>
+                <% if @user.acquisition_point <= 200 %>
+                  あと<%= 210 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 210 && @user.acquisition_point <= 450 %>
+                  あと<%= 460 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 460 && @user.acquisition_point <= 800 %>
+                  あと<%= 810 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 810 %>
+                  ーーーー
+                <% end %>
+              <% elsif @user.avatar == '3-1' %>
+                <% if @user.acquisition_point <= 50 %>
+                  あと<%= 60 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 60 && @user.acquisition_point <= 150 %>
+                  あと<%= 160 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 160 && @user.acquisition_point <= 270 %>
+                  あと<%= 280 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 280 && @user.acquisition_point <= 420 %>
+                  あと<%= 430 - @user.acquisition_point %>ポイント
+                <% elsif @user.acquisition_point >= 430 %>
+                  ーーーー
+                <% end %>
+              <% end %>
+              </td>
             </tr>
           </tbody>
         </table>
