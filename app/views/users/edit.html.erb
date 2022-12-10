@@ -14,15 +14,33 @@
         <div class="form-group">
           <label for="user_title">称号</label>
           <div class="form-row">
+          <% if @user.acquisition_point >= 10 %>
             <div class="col-4"><%= f.radio_button :title, '1' %><%= image_tag 'title1', width: '90%', height: '90%' %></div>
+            <% if @user.acquisition_point >= 50 %>
             <div class="col-4"><%= f.radio_button :title, '2' %><%= image_tag 'title2', width: '90%', height: '90%' %></div>
+              <% if @user.acquisition_point >= 100 %>
             <div class="col-4"><%= f.radio_button :title, '3' %><%= image_tag 'title3', width: '90%', height: '90%' %></div>
+                <% if @user.acquisition_point >= 200 %>
             <div class="col-4"><%= f.radio_button :title, '4' %><%= image_tag 'title4', width: '90%', height: '90%' %></div>
+                  <% if @user.acquisition_point >= 400 %>
             <div class="col-4"><%= f.radio_button :title, '5' %><%= image_tag 'title5', width: '90%', height: '90%' %></div>
+                    <% if @user.acquisition_point >= 700 %>
             <div class="col-4"><%= f.radio_button :title, '6' %><%= image_tag 'title6', width: '90%', height: '90%' %></div>
+                      <% if @user.acquisition_point >= 1200 %>
             <div class="col-4"><%= f.radio_button :title, '7' %><%= image_tag 'title7', width: '90%', height: '90%' %></div>
+                        <% if @user.acquisition_point >= 1700 %>
             <div class="col-4"><%= f.radio_button :title, '8' %><%= image_tag 'title8', width: '90%', height: '90%' %></div>
+                          <% if @user.acquisition_point >= 2500 %>
             <div class="col-4"><%= f.radio_button :title, '9' %><%= image_tag 'title9', width: '90%', height: '90%' %></div>
+                          <% end %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
           </div>
         </div>
         <div class="form-group">
