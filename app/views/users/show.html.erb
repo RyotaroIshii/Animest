@@ -15,6 +15,8 @@
     <% end %>
     <div class="offset-1"></div>
   </div>
+</div>
+<div class="container">
   <div class="row pb-2">
     <div class="col-12 d-flex align-items-center justify-content-center">
     <% if @user.title == 1 %>
@@ -41,7 +43,7 @@
     </div>
   </div>
   <div class="row pb-2">
-    <div class="col-12 text-center">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-auto mx-auto text-center">
     <% if @user.avatar == '1-1' %>
       <% if @user.acquisition_point <= 500 %>
         <%= image_tag '1-1' %>
@@ -75,67 +77,87 @@
     <% end %>
     </div>
   </div>
-    <div class="raw py-0">
-      <div class="offset-3 col-6">
-        <table class="table table-sm table-borderless m-auto">
-          <tbody>
-            <tr>
-              <td class="text-right pr-1">獲得経験値:</th>
-              <td class="pl-1"><%= @user.acquisition_point %>ポイント</td>
-            </tr>
-            <tr>
-              <td class="text-right pr-1">ジョブチェンジまで:</th>
-              <td class="pl-1">
-              <% if @user.avatar == '1-1' %>
-                <% if @user.acquisition_point <= 500 %>
-                  あと<%= 510 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 510 && @user.acquisition_point <= 1200 %>
-                  あと<%= 1210 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 1210 %>
-                  ーーーー
-                <% end %>
-              <% elsif @user.avatar == '2-1' %>
-                <% if @user.acquisition_point <= 200 %>
-                  あと<%= 210 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 210 && @user.acquisition_point <= 450 %>
-                  あと<%= 460 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 460 && @user.acquisition_point <= 800 %>
-                  あと<%= 810 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 810 %>
-                  ーーーー
-                <% end %>
-              <% elsif @user.avatar == '3-1' %>
-                <% if @user.acquisition_point <= 50 %>
-                  あと<%= 60 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 60 && @user.acquisition_point <= 150 %>
-                  あと<%= 160 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 160 && @user.acquisition_point <= 270 %>
-                  あと<%= 280 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 280 && @user.acquisition_point <= 420 %>
-                  あと<%= 430 - @user.acquisition_point %>ポイント
-                <% elsif @user.acquisition_point >= 430 %>
-                  ーーーー
-                <% end %>
-              <% end %>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-<div class="container">
-  <div class="raw py-3">
-    <div class="offset-3 col-6">
-      <table class="table table-borderless m-auto">
+  <div class="row pb-4">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-auto mx-auto">
+      <table class="table table-sm table-borderless m-0">
         <tbody>
           <tr>
-            <th class="text-right pr-1">名前:</th>
-            <td class="pl-1"><%= @user.name %></td>
+            <th class="text-right pr-0">名前:</th>
+            <td class="pl-0 pr-5"><%= @user.name %></td>
           </tr>
           <tr>
-            <th class="text-right pr-1">自己紹介:</th>
-            <td class="pl-1"><%= @user.description %></td>
+            <th class="text-right pr-0">自己紹介:</th>
+            <td class="pl-0 pr-5"><%= @user.description %></td>
+          </tr>
+          <tr>
+            <td class="p-">&nbsp;</td>
+            <td class="p-0">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="text-right p-0">獲得経験値:</td>
+            <td class="p-0 pr-5"><%= @user.acquisition_point %>ポイント</td>
+          </tr>
+          <tr>
+            <td class="text-right p-0">ジョブチェンジまで:</td>
+            <td class="p-0 pr-5">
+            <% if @user.avatar == '1-1' %>
+              <% if @user.acquisition_point <= 500 %>
+                あと<%= 510 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 510 && @user.acquisition_point <= 1200 %>
+                あと<%= 1210 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 1210 %>
+                ーーーー
+              <% end %>
+            <% elsif @user.avatar == '2-1' %>
+              <% if @user.acquisition_point <= 200 %>
+                あと<%= 210 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 210 && @user.acquisition_point <= 450 %>
+                あと<%= 460 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 460 && @user.acquisition_point <= 800 %>
+                あと<%= 810 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 810 %>
+                ーーーー
+              <% end %>
+            <% elsif @user.avatar == '3-1' %>
+              <% if @user.acquisition_point <= 50 %>
+                あと<%= 60 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 60 && @user.acquisition_point <= 150 %>
+                あと<%= 160 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 160 && @user.acquisition_point <= 270 %>
+                あと<%= 280 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 280 && @user.acquisition_point <= 420 %>
+                あと<%= 430 - @user.acquisition_point %>ポイント
+              <% elsif @user.acquisition_point >= 430 %>
+                ーーーー
+              <% end %>
+            <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-right p-0">称号獲得まで:</td>
+            <td class="p-0 pr-5">
+            <% if @user.acquisition_point == 0 %>
+              あと<%= 10 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 10 && @user.acquisition_point <= 40 %>
+              あと<%= 50 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 50 && @user.acquisition_point <= 90 %>
+              あと<%= 100 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 100 && @user.acquisition_point <= 190 %>
+              あと<%= 200 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 200 && @user.acquisition_point <= 390 %>
+              あと<%= 400 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 400 && @user.acquisition_point <= 690 %>
+              あと<%= 700 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 700 && @user.acquisition_point <= 1190 %>
+              あと<%= 1200 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 1200 && @user.acquisition_point <= 1690 %>
+              あと<%= 1700 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 1700 && @user.acquisition_point <= 2490 %>
+              あと<%= 2500 - @user.acquisition_point %>ポイント
+            <% elsif @user.acquisition_point >= 2500 %>
+              ーーーー
+            <% end %>
+            </td>
           </tr>
         </tbody>
       </table>
