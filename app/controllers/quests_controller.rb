@@ -26,6 +26,7 @@ class QuestsController < ApplicationController
   GRAPHQL
 
   def show
+    @quest = Quest.new
     @quests = result.data.search_works.edges
     @user = current_user
   end
