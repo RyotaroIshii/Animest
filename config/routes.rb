@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'logout_page' => 'users#logout', as: 'logout_page'
 
   get 'quest' => 'quests#show', as: 'quest'
+  patch 'quest' => 'quests#change', as: 'change_count'
   patch 'quest' => 'quests#update', as: 'update_point'
   get 'quest_cleared' => 'quests#complete', as: 'complete'
 

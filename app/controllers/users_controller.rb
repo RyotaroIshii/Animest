@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def title
+    
   end
 
   def index
@@ -29,7 +30,6 @@ class UsersController < ApplicationController
 
   def avatar
     @user = current_user
-
   end
 
   def login
