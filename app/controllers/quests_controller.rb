@@ -33,11 +33,10 @@ class QuestsController < ApplicationController
 
   def change
     @user = current_user
-    @quest = Quest.new(quest_params)
+    @quest = Quest.find(params[:id])
     if @quest.id = current_user.id
       @quest.change_count += 1
-      @quest.update(quest_params
-      )
+      @quest.update(quest_params)
     end
   end
 

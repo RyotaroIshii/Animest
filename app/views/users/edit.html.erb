@@ -11,6 +11,15 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
     <%= form_with model: @user, url: update_user_path, method: :patch do |f| %>
+      <% if @user.errors.any? %>
+      <div id="error_message">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
       <div class="form-group">
         <label for="user_title"><h4 class="py-2"><strong>称号</strong></h4></label>
         <div class="form-row">

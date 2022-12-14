@@ -10,8 +10,11 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    @user.update(user_params)
+    if @user.update(user_params)
     redirect_to user_path(current_user.uid)
+    else
+    render :edit
+    end
   end
 
   def create
@@ -22,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def title
-    
+
   end
 
   def index
