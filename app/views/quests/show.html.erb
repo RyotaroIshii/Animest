@@ -6,7 +6,7 @@
     </div>
     <div class="offset-1"></div>
   </div>
-  <div class="row pt-3">
+  <div class="row py-3">
     <div class="offset-1"></div>
     <div class="col-10">
       <h3 class="text-center pt-3"><strong>
@@ -21,11 +21,12 @@
     </div>
     <div class="offset-1"></div>
   </div>
-  <div class="row pt-3">
+  <div class="row py-3">
     <div class="offset-4"></div>
     <div class="col-4 d-flex justify-content-between">
-      
-      <a class="btn btn-secondary font-weight-bold" href="/quest" role="button">クエスト変更</a>
+    <%= form_with model: @quest, url: change_count_path, method: :patch do |f| %>
+      <%= f.submit 'クエスト変更', :class =>"btn btn-secondary font-weight-bold" %>
+    <% end %>
       <% if logged_in? %>
         <%= form_with model: @user, url: update_point_path, method: :patch do |f| %>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#questModal">視聴完了</button>
@@ -78,7 +79,7 @@
         <li>ランダムにアニメタイトル(映画含む)が表示されるぞ！</li>
         <li>表示されたアニメを視聴しよう！</li>
         <li>視聴(自己申告)したら「視聴完了」ボタンを押そう！</li>
-        <li>「クエスト変更」ボタンで表示タイトルをいつでも変更できるぞ！ただし、<u>チェンジ回数</u>がカウントされていくから気を付けよう！<small>(デメリットは特にありません)</small></li>
+        <li>「クエスト変更」ボタンで表示タイトルをいつでも変更できるぞ！</li>
         <li>どのタイトルも1つにつき10ポイント！獲得ポイントによってアバターの変化と称号の獲得ができるぞ！</li>
         <li>クエストクリアして<strong><u>アニメストマスター</u></strong>を目指そう！</li>
       </ol>

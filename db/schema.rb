@@ -65,13 +65,13 @@ ActiveRecord::Schema.define(version: 2022_10_19_195415) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "uid"
-    t.string "nickname"
-    t.string "image"
-    t.string "name"
+    t.string "uid", null: false
+    t.string "nickname", null: false
+    t.string "image", null: false
+    t.string "name", null: false
     t.string "avatar"
     t.integer "title"
-    t.string "description"
+    t.string "description", null: false
     t.integer "acquisition_point", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

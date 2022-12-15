@@ -26,17 +26,22 @@ class QuestsController < ApplicationController
   GRAPHQL
 
   def show
-    @quest = Quest.new
     @quests = result.data.search_works.edges
     @user = current_user
   end
 
   def change
     @user = current_user
-    @quest = Quest.find(params[:id])
-    if @quest.id = current_user.id
+    if  @quest.change_count == nil
+      @quest = Quest.new
+      @quest.change_count += 1
+      @quest.save
+      redirect_to quest_path
+    elsif not @quest.change_count == nil
+      @quest = Quest.find(params[:id])
       @quest.change_count += 1
       @quest.update(quest_params)
+      redirect_to quest_path
     end
   end
 
@@ -53,7 +58,7 @@ class QuestsController < ApplicationController
   private
 
   def quest_params
-    params.require(:quest).permit(:user_id, :change_count)
+    params.require(:quest).permit(:id, :user_id, :change_count)
   end
 
   def user_params
