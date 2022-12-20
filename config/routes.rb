@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   root to: 'homes#top'
-  get 'ranking' => 'homes#rank', as: 'ranking'
+  get 'login_page' => 'homes#login', as: 'login_page'
+  get 'logout_page' => 'homes#logout', as: 'logout_page'
 
   get 'user/:uid' => 'users#show', as: 'user'
   get 'user/:uid/edit' => 'users#edit', as: 'edit_user'
@@ -10,11 +11,12 @@ Rails.application.routes.draw do
   get 'user/:uid/watched_anime' => 'users#index', as: 'watched_anime'
   get 'user/:uid/avatar_select' => 'users#avatar', as: 'avatar'
   post 'user/:uid/avatar_select' => 'users#create', as: 'create_avatar'
-  get 'login_page' => 'users#login', as: 'login_page'
-  get 'logout_page' => 'users#logout', as: 'logout_page'
+  get 'users/ranking' => 'users#rank', as: 'ranking'
+
+
 
   get 'quest' => 'quests#show', as: 'quest'
-  patch 'quest' => 'quests#change', as: 'change_count'
+  # patch 'quest' => 'quests#change', as: 'change_count'
   patch 'quest' => 'quests#update', as: 'update_point'
   get 'quest_cleared' => 'quests#complete', as: 'complete'
 

@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row pt-3">
+    <div class="offset-1"></div>
+    <div class="col-10">
+      <h1 class="font-weight-bold"><i class="fa-solid fa-ranking-star"></i>ランキング</h1>
+    </div>
+  </div>
+  <div class="row py-3">
+    <div class="offset-2"></div>
+    <div class="col-8">
+    <% @users.each.with_index(1) do |user,i|%>
+    <p><%= i %>位 <%= render 'ranks', user: user %> </p>
+    <% end %>
+    <div class="offset-2"></div>
+  </div>

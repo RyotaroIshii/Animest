@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     if @user.update(user_params)
     redirect_to user_path(current_user.uid)
     else
@@ -24,8 +24,8 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user.uid)
   end
 
-  def title
-
+  def rank
+    @users = User.all
   end
 
   def index
@@ -35,16 +35,10 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def login
-  end
-
-  def logout
-  end
-
   private
 
   def user_params
-    params.require(:user).permit(:id, :uid, :name, :avatar, :title, :description)
+    params.require(:user).permit(:id, :uid, :name, :avatar, :title, :description, :acquisition_point)
   end
 
   def title_params

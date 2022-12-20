@@ -30,20 +30,20 @@ class QuestsController < ApplicationController
     @user = current_user
   end
 
-  def change
-    @user = current_user
-    if  @quest.change_count == nil
-      @quest = Quest.new
-      @quest.change_count += 1
-      @quest.save
-      redirect_to quest_path
-    elsif not @quest.change_count == nil
-      @quest = Quest.find(params[:id])
-      @quest.change_count += 1
-      @quest.update(quest_params)
-      redirect_to quest_path
-    end
-  end
+  # def change
+  #   @user = current_user
+  #   if  @quest.change_count == nil
+  #     @quest = Quest.new
+  #     @quest.change_count += 1
+  #     @quest.save
+  #     redirect_to quest_path
+  #   elsif not @quest.change_count == nil
+  #     @quest = Quest.find(params[:id])
+  #     @quest.change_count += 1
+  #     @quest.update(quest_params)
+  #     redirect_to quest_path
+  #   end
+  # end
 
   def update
     @user = current_user

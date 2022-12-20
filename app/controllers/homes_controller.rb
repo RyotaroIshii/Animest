@@ -2,6 +2,9 @@ class HomesController < ApplicationController
   def top
   end
 
-  def rank
+  def login
+  end
+
+  def logout
   end
 end
