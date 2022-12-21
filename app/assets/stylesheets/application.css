@@ -5,7 +5,7 @@
 
 /* 表示しているページ番号のデザイン */
 .pagination>.active>a {
-  background: #93c9ff;     /*背景の色を変える*/
+  background: #ffe082;     /*背景の色を変える*/
   border-radius: 15px;     /*角を丸くする*/
 }
 
