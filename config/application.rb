@@ -20,6 +20,7 @@ module Animest
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.i18n.default_locale = :ja
   end
 
   AUTH_HEADER = "Bearer dCXez122WWdr8vPM9YE0jd1xj24O0wgxGqEO_WJauwI"

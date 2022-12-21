@@ -1,15 +1,39 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row pt-3">
     <div class="offset-1"></div>
     <div class="col-10">
       <h1 class="font-weight-bold"><i class="fa-solid fa-ranking-star"></i>ランキング</h1>
     </div>
+    <div class="offset-1"></div>
   </div>
   <div class="row py-3">
-    <div class="offset-2"></div>
-    <div class="col-8">
-    <% @users.each.with_index(1) do |user,i|%>
-    <p><%= i %>位 <%= render 'ranks', user: user %> </p>
-    <% end %>
-    <div class="offset-2"></div>
+    <div class="offset-1"></div>
+    <div class="col-10">
+      <table class="table table-borderless border-bottom border-dark text-center">
+        <thead class="font-weight-bold" style="font-size:18px;">
+          <tr>
+            <th style="width: 10%">順位</th>
+            <th style="width: 20%"></th>
+            <th style="width: 15%">名前</th>
+            <th style="width: 20%">獲得ポイント</th>
+            <th style="width: 25%">称号</th>
+          </tr>
+        </thead>
+        <% @users.each.with_index(1) do |user,i|%>
+        <tbody class="border-bottom border-top border-dark">
+          <tr>
+            <th class="align-middle"><%= i %>位</th>
+            <%= render 'ranks', user: user %>
+          </tr>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+    <div class="offset-1"></div>
   </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <%= paginate @users %>
+    </div>
+  </div>
+</div>
