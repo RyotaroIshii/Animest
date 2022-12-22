@@ -19,11 +19,11 @@
     <div class="offset-2"></div>
     <div class="col-8 d-flex justify-content-around">
       <% if logged_in? %>
-      <%= link_to image_tag('mypage.png', width: '80%', height: '80%'), user_path(current_user.uid) %>
+      <%= link_to image_tag('mypage.png', width: '80%', height: '80%'), user_path(current_user.uid), :class => "d-flex align-items-center justify-content-center" %>
       <% else %>
-      <%= link_to image_tag('login.png', width: '80%', height: '80%'), login_page_path %>
+      <%= link_to image_tag('login.png', width: '80%', height: '80%'), login_page_path, :class => "d-flex align-items-center justify-content-center"%>
       <% end %>
-      <%= link_to image_tag('rank.png', width: '80%', height: '80%'), ranking_path %>
+      <%= link_to image_tag('rank.png', width: '80%', height: '80%'), ranking_path, :class => "d-flex align-items-center justify-content-center" %>
     </div>
     <div class="offset-2"></div>
   </div>

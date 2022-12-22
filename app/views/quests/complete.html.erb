@@ -1,2 +1,20 @@
-<h1>Quests#complete</h1>
-<p>Find me in app/views/quests/complete.html.erb</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-end justify-content-center" style="height:250px; width:100%;">
+      <h2 class="font-weight-bold">クエストクリアおめでとう！</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-start justify-content-center" style="height:200px; width:100%;">
+      <p>この調子で頑張っていこう！</p>
+    </div>
+  </div>
+  <div class="row py-4">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex justify-content-around">
+
+      <%= link_to image_tag('mypage.png', width: '80%', height: '80%'), user_path(current_user.uid), :class => "d-flex align-items-center justify-content-center" %>
+
+      <%= link_to image_tag('rank.png', width: '80%', height: '80%'), ranking_path, :class => "d-flex align-items-center justify-content-center"  %>
+    </div>
+  </div>
+</div>
