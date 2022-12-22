@@ -2,10 +2,10 @@
   <div class="row pt-3">
     <div class="offset-1"></div>
     <% if @user.uid == current_user.uid %>
-    <div class="col-9">
+    <div class="col-sm-8 col-md-8 col-lg-9">
       <h1 class="font-weight-bold"><%= image_tag current_user.image, :class => "rounded-circle" %>マイページ</h1>
     </div>
-    <div class="col-1">
+    <div class="col-sm-2 col-md-2 col-lg-1">
       <%= link_to image_tag('gear', width: '110%', height: '100%' ), edit_user_path %>
     </div>
     <% else %>
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="row pb-2">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-auto mx-auto text-center">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto text-center">
     <% if @user.avatar == '1-1' %>
       <% if @user.acquisition_point <= 500 %>
         <%= image_tag '1-1' %>
@@ -78,7 +78,7 @@
     </div>
   </div>
   <div class="row pb-4">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-auto mx-auto">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto">
       <table class="table table-sm table-borderless m-0">
         <tbody>
           <tr>
