@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get 'user/:uid' => 'users#show', as: 'user'
   get 'user/:uid/edit' => 'users#edit', as: 'edit_user'
   patch 'user/:uid' => 'users#update', as: 'update_user'
-  get 'user/:uid/titles' => 'users#title', as: 'user_titles'
-  get 'user/:uid/watched_anime' => 'users#index', as: 'watched_anime'
   get 'user/:uid/avatar_select' => 'users#avatar', as: 'avatar'
   post 'user/:uid/avatar_select' => 'users#create', as: 'create_avatar'
   get 'users/ranking' => 'users#rank', as: 'ranking'
@@ -21,7 +19,7 @@ Rails.application.routes.draw do
   get 'quest_cleared' => 'quests#complete', as: 'complete'
 
   get 'anime' => 'animes#index', as: 'index_animes'
-  get 'anime/:year' => 'animes#year', as: 'year'
+  # get 'anime/:year' => 'animes#year', as: 'year'
 
   get 'title/:uid' => 'titles#show', as: 'title'
 
