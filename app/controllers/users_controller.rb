@@ -38,12 +38,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:id, :uid, :name, :avatar, :title, :description, :acquisition_point)
-  end
-
-  def title_params
-    params.require(:title).permit(:title_id, :title)
-
+    params.require(:user).permit(:uid, :name, :avatar, :title, :description, :acquisition_point)
   end
 
 end

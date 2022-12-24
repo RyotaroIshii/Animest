@@ -25,6 +25,9 @@ class QuestsController < ApplicationController
 }
   GRAPHQL
 
+
+
+
   def show
     @quests = result.data.search_works.edges
     @user = current_user
@@ -55,17 +58,19 @@ class QuestsController < ApplicationController
   def complete
   end
 
+
   private
 
   def quest_params
-    params.require(:quest).permit(:id, :user_id, :change_count)
+    params.require(:quest).permit(:id, :user_id)
   end
 
   def user_params
-    params.require(:user).permit(:id, :uid, :name, :image, :acquisition_point)
+    params.require(:user).permit(:id, :uid, :name, :image, :avatar, :acquisition_point)
   end
 
   def result
     response = Animest::Client.query(Query)
   end
+
 end

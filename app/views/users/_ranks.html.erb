@@ -31,7 +31,7 @@
   <% end %>
 <% end %>
 </td>
-<td class="align-middle"><%= user.name %></td>
+<td class="align-middle"><%= link_to user.name, user_path(user.uid), :class => "text-dark" %></td>
 <td class="align-middle"><%= user.acquisition_point %></td>
 <td class="align-middle">
 <% if user.title == 1 %>
