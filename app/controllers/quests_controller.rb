@@ -66,7 +66,7 @@ class QuestsController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:id, :uid, :name, :image, :avatar, :acquisition_point)
+    params.require(:user).permit(:uid, :name, :image, :avatar, :acquisition_point)
   end
 
   def result

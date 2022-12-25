@@ -5,21 +5,42 @@
       <h1 class="text-right font-weight-bold"><i class="fa-solid fa-video"></i></h1>
     </div>
     <div class="col-3 pl-0">
-      <h1 class="font-weight-bold border-dark border-bottom border-top">&nbsp;アニメ一覧</h1>
+      <h1 class="font-weight-bold border-dark border-bottom border-top">&nbsp;アニメ一覧</h1><p></p>
     </div>
   </div>
   <div class="row">
     <div class="offset-2"></div>
     <div class="col-8">
-      <p>2010年~2022年に放送された全<strong><%= @animes.count %></strong>件のアニメ一覧です。<small>※1クール毎に更新予定</small></p>
+      <p>2010年冬~2022年秋に放送された全<strong><%= @animes.count %></strong>件のアニメ<small>(放送年順)</small>一覧です。<small>※1クール毎に更新予定</small></p>
+      <p><a href="https://annict.com/">Annict</a>のWeb APIを使用することによりアニメデータを取得・使用しています。<br>Annict側により内容が追加及び削除される場合がございます。ご了承ください。</p>
     </div>
   </div>
+</div>
+<div class="container">
   <div class="row">
-    <div class="col-12 px-1">
-    <% @animes.each do |anime|%>
-        <p><%= anime.node.title %>
-        <br><%= anime.node.season_year %></p>
-    <% end %>
+    <div class="col-12">
+      <table class="table table-borderless border-bottom border-dark">
+        <thead>
+          <tr>
+            <th class="border-left border-dark" style="width: 70%">タイトル</th>
+            <th class="border-left border-dark" style="width: 15%">放送年</th>
+            <th class="border-left border-dark" style="width: 15%">公式サイト</th>
+          </tr>
+        </thead>
+        <% @animes.each do |anime|%>
+        <tbody class="border-bottom border-top border-dark">
+          <tr>
+            <td>･<%= anime.node.title %></td>
+            <td><%= anime.node.season_year %>年</td>
+            <% if not anime.node.official_site_url == "" %>
+            <td class="text-center"><%= link_to "進む", anime.node.official_site_url, :class => "text-dark font-weight-bold" %></td>
+            <% else %>
+            <td class="text-muted">リンクデータ無し</td>
+            <% end %>
+          </tr>
+        </tbody>
+    　　<% end %>
+      </table>
     </div>
   </div>
 </div>

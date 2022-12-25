@@ -20,6 +20,7 @@ class AnimesController < ApplicationController
       node {
         title
         seasonYear
+        officialSiteUrl
       }
     }
   }

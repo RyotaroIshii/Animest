@@ -31,28 +31,28 @@
   <% end %>
 <% end %>
 </td>
-<td class="align-middle"><%= link_to user.name, user_path(user.uid), :class => "text-dark" %></td>
+<td class="align-middle"><%= link_to user.name, user_path(user.uid), :class => "text-dark font-weight-bold" %></td>
 <td class="align-middle"><%= user.acquisition_point %></td>
 <td class="align-middle">
 <% if user.title == 1 %>
   <%= image_tag 'title1', width: '75%', height: '75%' %>
 <% elsif user.title == 2 %>
-  <%= image_tag 'title2', width: '15%', height: '30%' %>
+  <%= image_tag 'title2', width: '75%', height: '75%' %>
 <% elsif user.title == 3 %>
-  <%= image_tag 'title3', width: '15%', height: '30%' %>
+  <%= image_tag 'title3', width: '75%', height: '75%' %>
 <% elsif user.title == 4 %>
-  <%= image_tag 'title4', width: '15%', height: '30%' %>
+  <%= image_tag 'title4', width: '75%', height: '75%' %>
 <% elsif user.title == 5 %>
-  <%= image_tag 'title5', width: '15%', height: '30%' %>
+  <%= image_tag 'title5', width: '75%', height: '75%' %>
 <% elsif user.title == 6 %>
-  <%= image_tag 'title6', width: '15%', height: '30%' %>
+  <%= image_tag 'title6', width: '75%', height: '75%' %>
 <% elsif user.title == 7 %>
-  <%= image_tag 'title7', width: '15%', height: '30%' %>
+  <%= image_tag 'title7', width: '75%', height: '75%' %>
 <% elsif user.title == 8 %>
-  <%= image_tag 'title8', width: '10%', height: '20%' %>
+  <%= image_tag 'title8', width: '70%', height: '65%' %>
 <% elsif user.title == 9 %>
-  <%= image_tag 'title9', width: '15%', height: '30%' %>
+  <%= image_tag 'title9', width: '75%', height: '75%' %>
 <% else %>
-  <%= image_tag 'title0', width: '50%', height: '50%' %>
+  <%= image_tag 'title0', width: '45%', height: '45%' %>
 <% end %>
 </td>
