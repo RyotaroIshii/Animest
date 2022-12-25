@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   post 'user/:uid/avatar_select' => 'users#create', as: 'create_avatar'
   get 'users/ranking' => 'users#rank', as: 'ranking'
 
-
-
   get 'quest' => 'quests#show', as: 'quest'
   # patch 'quest' => 'quests#change', as: 'change_count'
   patch 'quest' => 'quests#update', as: 'update_point'
@@ -21,7 +19,7 @@ Rails.application.routes.draw do
   get 'anime' => 'animes#index', as: 'index_animes'
   # get 'anime/:year' => 'animes#year', as: 'year'
 
-  get 'title/:uid' => 'titles#show', as: 'title'
+  # get 'title/:uid' => 'titles#show', as: 'title'
 
 
   get '/auth/:provider/callback', to: 'sessions#create'
