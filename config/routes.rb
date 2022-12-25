@@ -19,8 +19,6 @@ Rails.application.routes.draw do
   get 'anime' => 'animes#index', as: 'index_animes'
   # get 'anime/:year' => 'animes#year', as: 'year'
 
-  # get 'title/:uid' => 'titles#show', as: 'title'
-
 
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
