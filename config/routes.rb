@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   # patch 'quest' => 'quests#change', as: 'change_count'
   patch 'quest' => 'quests#update', as: 'update_point'
   get 'quest_cleared' => 'quests#complete', as: 'complete'
-  patch 'quest_cleared' => 'quests#tweet', as: 'tweet'
 
   get 'anime' => 'animes#index', as: 'index_animes'
   # get 'anime/:year' => 'animes#year', as: 'year'
