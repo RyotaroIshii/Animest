@@ -27,13 +27,34 @@
             <th class="border-left border-dark" style="width: 15%">公式サイト</th>
           </tr>
         </thead>
-        <% @animes.each do |anime|%>
+        <% @animes.each.with_index(1) do |anime, i|%>
         <tbody class="border-bottom border-top border-dark">
           <tr>
             <td>･<%= anime.node.title %></td>
             <td><%= anime.node.season_year %>年</td>
             <% if not anime.node.official_site_url == "" %>
-            <td class="text-center"><%= link_to "進む", anime.node.official_site_url, :class => "text-dark font-weight-bold" %></td>
+            <td class="text-center font-weight-bold official-site-url" data-toggle="modal" data-target="#animeModal<%= i %>">進む</td>
+            <div class="modal fade" id="animeModal<%= i %>" tabindex="-1" role="dialog" aria-labelledby="animeModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="animeModalLabel">確認</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    これより先は別のサイトです。<br>
+                    当サイトは遷移先のサイトを利用したことにより生じたいかなる損害について責任を負いません。<br>
+                    こちらを確認した上でご利用ください。
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
+                    <%= link_to "進む", anime.node.official_site_url, :class => "btn btn-success" %>
+                  </div>
+                </div>
+              </div>
+            </div>
             <% else %>
             <td class="text-muted">リンクデータ無し</td>
             <% end %>
