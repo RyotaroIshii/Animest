@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def rank
-    @users = User.page(params[:page]).per(10)
+    @users = User.order('acquisition_point desc').page(params[:page]).per(10)
   end
 
   def index
