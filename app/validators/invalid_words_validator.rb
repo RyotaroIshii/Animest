@@ -5,7 +5,7 @@ class InvalidWordsValidator < ActiveModel::EachValidator
 # value : フォームに入力された値（"おはよう","foobar"とか）
   def validate_each(record, attribute, value)
 # blacklist.ymlから不適切な言葉を読み取る
-    blacklist = YAML.load_file('./config/blacklist.yml')
+    blacklist = YAML.load_file(__dir__+'/../../config/blacklist.yml')
 # valueが空でないか、blacklistに入力された値が含まれているかを判断
     if value.present? && blacklist.any?{ |word| value.include?(word) }
 # :contain_blacklist_wordsはja.ymlなどに定義しておくとよい。
