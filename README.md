@@ -35,7 +35,7 @@
 リストは[こちら](https://docs.google.com/spreadsheets/d/1ui7cRQsYLrmJbussVq6b6Je69bkcSeMT1m5BW7IoXXw/edit?usp=sharing)
 
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：Amazon Linux release 2 (Karoo)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
@@ -50,7 +50,6 @@
 - dotenv-rails
 - graphql-client
 - net-smtp
-- ActiveStorage
 - better_errors
 - binding_of_caller
 
