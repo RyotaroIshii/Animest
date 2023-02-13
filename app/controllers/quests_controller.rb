@@ -14,7 +14,8 @@ class QuestsController < ApplicationController
     ,"2019-winter","2019-spring","2019-summer","2019-autumn"
     ,"2020-winter","2020-spring","2020-summer","2020-autumn"
     ,"2021-winter","2021-spring","2021-summer","2021-autumn"
-    ,"2022-winter","2022-spring","2022-summer","2022-autumn"]) {
+    ,"2022-winter","2022-spring","2022-summer","2022-autumn"
+    ,"2023-winter"]) {
     edges {
       node {
         title
