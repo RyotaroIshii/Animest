@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <% if not current_user.avatar == nil %>
   <div class="row pt-3">
     <div class="offset-1"></div>
     <% if @user == current_user %>
@@ -6,7 +7,7 @@
       <h1 class="font-weight-bold"><%= image_tag current_user.image, :class => "rounded-circle" %>マイページ</h1>
     </div>
     <div class="col-sm-2 col-md-2 col-lg-1">
-      <%= link_to image_tag('gear', width: '110%', height: '100%' ), edit_user_path%>
+      <%= link_to image_tag('gear', width: '110%', height: '100%' ), edit_user_path %>
     </div>
     <% else %>
     <div class="col-10">
@@ -164,5 +165,22 @@
       </table>
     </div>
   </div>
+  <% else %>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-end justify-content-center" style="height:250px; width:100%;">
+      <h5><strong class="text-center"><%= current_user.name %>さんは、アバター登録未完了です。</strong></h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-center justify-content-center">
+      <h2 class="font-weight-bold"><%= link_to 'アバターの登録', avatar_path %>を完了させてください。</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-start justify-content-center" style="height:300px; width:100%;">
+      <p>これからも「アニメスト」をよろしくお願いいたします。</p>
+    </div>
+  </div>
+  <% end %>
 </div>
 
