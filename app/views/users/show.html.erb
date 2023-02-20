@@ -1,5 +1,21 @@
 <div class="container-fluid">
-  <% if not current_user.avatar == nil %>
+  <% if current_user.avatar == nil %>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-end justify-content-center" style="height:250px; width:100%;">
+      <h5><strong class="text-center"><%= current_user.name %>さんは、アバター登録未完了です。</strong></h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-center justify-content-center">
+      <h2 class="font-weight-bold"><%= link_to 'アバターの登録', avatar_path %>を完了させてください。</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-start justify-content-center" style="height:300px; width:100%;">
+      <p>これからも「アニメスト」をよろしくお願いいたします。</p>
+    </div>
+  </div>
+  <% else %>
   <div class="row pt-3">
     <div class="offset-1"></div>
     <% if @user == current_user %>
@@ -163,22 +179,6 @@
           <% end %>
         </tbody>
       </table>
-    </div>
-  </div>
-  <% else %>
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-end justify-content-center" style="height:250px; width:100%;">
-      <h5><strong class="text-center"><%= current_user.name %>さんは、アバター登録未完了です。</strong></h5>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-center justify-content-center">
-      <h2 class="font-weight-bold"><%= link_to 'アバターの登録', avatar_path %>を完了させてください。</h2>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-start justify-content-center" style="height:300px; width:100%;">
-      <p>これからも「アニメスト」をよろしくお願いいたします。</p>
     </div>
   </div>
   <% end %>
