@@ -3,10 +3,10 @@
     <div class="offset-1"></div>
   <% if @user == current_user %>
     <% if current_user.avatar == nil %>
-      <div class="col-12 px-auto mx-auto d-flex align-items-end justify-content-center" style="height:250px; width:100%;">
+      <div class="col-12 px-auto mx-auto d-flex align-items-end justify-content-center" style="height:300px; width:100%;">
         <h5><strong class="text-center"><%= current_user.name %>さんは、アバター登録未完了です。</strong></h5>
       </div>
-      <div class="col-12 px-auto mx-auto d-flex align-items-start justify-content-center" style="height:300px; width:100%;">
+      <div class="col-12 px-auto mx-auto d-flex align-items-start justify-content-center" style="height:400px; width:100%;">
         <h2 class="font-weight-bold"><%= link_to 'アバターの登録', avatar_path %>を完了させてください。</h2>
       </div>
     <% else %>
@@ -25,8 +25,11 @@
     <div class="offset-1"></div>
   </div>
 </div>
-
+<% if logged_in? && @user == current_user && current_user.avatar == nil %>
+ <!--何も表示させないため-->
+<% else %>
 <div class="container">
+
   <div class="row pb-2">
     <div class="col-12 d-flex align-items-center justify-content-center">
     <% if @user.title == 1 %>
@@ -52,6 +55,9 @@
     <% end %>
     </div>
   </div>
+  <% if  @user.avatar == nil %>
+  <div style="height:330px; width:100%;"></div>
+  <% end %>
   <div class="row pb-2">
     <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto text-center">
     <% if @user.avatar == '1-1' %>
@@ -177,4 +183,5 @@
     <div class="offset-1 offset-sm-2 offset-md-3 offset-lg-4"></div>
   </div>
 </div>
+<% end %>
 
