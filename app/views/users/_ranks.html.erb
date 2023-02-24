@@ -29,10 +29,19 @@
   <% elsif user.acquisition_point >= 430 %>
     <%= image_tag '3-5', width: '35%', height: '35%'  %>
   <% end %>
-<% end %>
+<% else %>
+  <p class="text-muted m-0">アバター未選択</p>
 </td>
+<% end %>
+
+<% if user.name == "" %>
+<td class="align-middle text-muted">匿名</td>
+<% else %>
 <td class="align-middle"><%= link_to user.name, user_path(user.uid), :class => "text-dark font-weight-bold" %></td>
+<% end %>
+
 <td class="align-middle"><%= user.acquisition_point %></td>
+
 <td class="align-middle">
 <% if user.title == 1 %>
   <%= image_tag 'title1', width: '75%', height: '75%' %>

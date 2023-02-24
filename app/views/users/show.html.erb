@@ -100,7 +100,11 @@
         <tbody>
           <tr>
             <th class="text-right text-nowrap pr-0">名前:</th>
+            <% if @user.name == "" %>
+            <td class="pl-0 pr-5">匿名</td>
+            <% else %>
             <td class="pl-0 pr-5"><%= @user.name %></td>
+            <% end %>
           </tr>
           <tr>
             <th class="text-right text-nowrap pr-0">自己紹介:</th>
