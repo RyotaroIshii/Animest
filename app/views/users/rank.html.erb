@@ -52,10 +52,10 @@
             <%= render 'ranks', user: user %>
           </tr>
         </tbody>
-          <% elsif j <= 4 %>
+          <% elsif j != 1 && 2 && 3 %>
         <tbody class="border-bottom border-top border-dark">
           <tr>
-            <th class="align-middle"><%= j %>位</th>
+            <th class="align-middle"><%= i %>位</th>
             <%= render 'ranks', user: user %>
           </tr>
         </tbody>
