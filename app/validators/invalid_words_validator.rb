@@ -9,7 +9,7 @@ class InvalidWordsValidator < ActiveModel::EachValidator
 # valueが空でないか、blacklistに入力された値が含まれているかを判断
     if value.present? && blacklist.any?{ |word| value.include?(word) }
 # :contain_blacklist_wordsはja.ymlなどに定義しておくとよい。
-      record.errors.add('ERROR!','不適切な表現が含まれています')
+      record.errors.add(attribute,'不適切な表現が含まれています')
     end
 
 # same_character_regex: 連続する五文字以上の語（"あああああ"）などを防ぐ
@@ -24,8 +24,12 @@ class InvalidWordsValidator < ActiveModel::EachValidator
 
 # invalid_regexをinvalid_key,invalid_valueとして取り出しinvalid_value.match?(value)で正規表現と一致しているかを調べる。
 
-    if value.present? && invalid_regex.any?{|invalid_key,invalid_value| invalid_value.match?(value)}
-      record.errors.add('ERROR!', '使用できない文字が含まれています')
+    if value.present? && value.match?(invalid_regex[:same_character_regex])
+      record.errors.add(attribute, '同じ文字が5文字以上続いています')
+    end
+
+    if value.present? && invalid_regex.any? { |key, regex| key != :same_character_regex && regex.match?(value) }
+      record.errors.add(attribute, '使用できない文字が含まれています')
     end
 
   end

@@ -15,7 +15,7 @@
       <div id="error_message">
         <ul>
           <% @user.errors.full_messages.each do |message| %>
-          <li><p class="text-danger"><%= message %></p></li>
+          <li><p class="text-danger font-weight-bold m-0"><%= message %></p></li>
           <% end %>
         </ul>
       </div>
