@@ -24,8 +24,8 @@
     <div class="offset-1"></div>
   </div>
   <div class="row py-3">
-    <div class="offset-4"></div>
-    <div class="col-4 d-flex justify-content-between">
+    <div class="offset-1 offset-sm-2 offset-md-3 offset-lg-4"></div>
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4 d-flex justify-content-between">
       <a class="btn btn-secondary font-weight-bold" href="/quest" role="button">クエスト変更</a>
       <% if logged_in? %>
         <%= form_with model: @user, url: update_point_path, method: :patch do |f| %>
@@ -54,7 +54,7 @@
       <a class="btn btn-primary font-weight-bold" href="/login_page" role="button">ログイン</a>
       <% end %>
     </div>
-    <div class="offset-4"></div>
+    <div class="offset-1 offset-sm-2 offset-md-3 offset-lg-4"></div>
   </div>
   <!--<div class="row pb-3">-->
   <!--  <div class="offset-4"></div>-->

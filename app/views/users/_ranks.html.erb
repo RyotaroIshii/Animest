@@ -1,7 +1,7 @@
 <td class="align-middle">
 <% if user.avatar == '1-1' %>
   <% if user.acquisition_point <= 500 %>
-    <%= image_tag '1-1', width: '35%', height: '35%' %>
+    <%= image_tag '1-1', width: '35%', height: '35%', class: "img-responsive" %>
   <% elsif user.acquisition_point >= 510 && user.acquisition_point <= 1200 %>
     <%= image_tag '1-2', width: '35%', height: '35%'  %>
   <% elsif user.acquisition_point >= 1210 %>
