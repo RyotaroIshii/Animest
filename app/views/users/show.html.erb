@@ -32,27 +32,8 @@
 
   <div class="row pb-2">
     <div class="col-12 d-flex align-items-center justify-content-center">
-    <% if @user.title == 1 %>
-      <%= image_tag 'title1', width: '40%', height: '85%' %>
-    <% elsif @user.title == 2 %>
-      <%= image_tag 'title2', width: '40%', height: '85%' %>
-    <% elsif @user.title == 3 %>
-      <%= image_tag 'title3', width: '40%', height: '85%' %>
-    <% elsif @user.title == 4 %>
-      <%= image_tag 'title4', width: '40%', height: '85%' %>
-    <% elsif @user.title == 5 %>
-      <%= image_tag 'title5', width: '40%', height: '85%' %>
-    <% elsif @user.title == 6 %>
-      <%= image_tag 'title6', width: '40%', height: '85%' %>
-    <% elsif @user.title == 7 %>
-      <%= image_tag 'title7', width: '40%', height: '85%' %>
-    <% elsif @user.title == 8 %>
-      <%= image_tag 'title8', width: '25%', height: '70%' %>
-    <% elsif @user.title == 9 %>
-      <%= image_tag 'title9', width: '40%', height: '85%' %>
-    <% else %>
-      <%= image_tag 'title0', width: '25%', height: '70%' %>
-    <% end %>
+    <% title_number = @user.title || 0 %>
+    <%= image_tag "title#{title_number}", :class => title_number.zero? ? "page-no_title" : "page-title" %>
     </div>
   </div>
   <% if  @user.avatar == nil %>

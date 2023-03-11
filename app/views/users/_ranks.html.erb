@@ -43,25 +43,6 @@
 <td class="align-middle"><%= user.acquisition_point %></td>
 
 <td class="align-middle">
-<% if user.title == 1 %>
-  <%= image_tag 'title1', :class => "rank-title" %>
-<% elsif user.title == 2 %>
-  <%= image_tag 'title2', :class => "rank-title" %>
-<% elsif user.title == 3 %>
-  <%= image_tag 'title3', :class => "rank-title" %>
-<% elsif user.title == 4 %>
-  <%= image_tag 'title4', :class => "rank-title" %>
-<% elsif user.title == 5 %>
-  <%= image_tag 'title5', :class => "rank-title" %>
-<% elsif user.title == 6 %>
-  <%= image_tag 'title6', :class => "rank-title" %>
-<% elsif user.title == 7 %>
-  <%= image_tag 'title7', :class => "rank-title" %>
-<% elsif user.title == 8 %>
-  <%= image_tag 'title8', :class => "rank-title" %>
-<% elsif user.title == 9 %>
-  <%= image_tag 'title9', :class => "rank-title" %>
-<% else %>
-  <%= image_tag 'title0', :class => "rank-no_title" %>
-<% end %>
+<% title_number = user.title || 0 %>
+<%= image_tag "title#{title_number}", :class => title_number.zero? ? "rank-no_title" : "rank-title" %>
 </td>
