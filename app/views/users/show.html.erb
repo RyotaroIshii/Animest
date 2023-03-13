@@ -13,7 +13,7 @@
     <div class="col-8 col-sm-8 col-md-8 col-lg-9">
       <h1 class="font-weight-bold"><%= image_tag current_user.image, :class => "rounded-circle" %>マイページ</h1>
     </div>
-    <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+    <div class="col-2 col-sm-2 col-md-2 col-lg-1 d-flex align-items-center px-1">
       <%= link_to image_tag('gear', width: '100%', height: '100%' ), edit_user_path %>
     </div>
     <% end %>
