@@ -30,8 +30,26 @@ class QuestsController < ApplicationController
 
 
   def show
-    @quests = result.data.search_works.edges
+    if session[:title].nil?
+    # ランダムなタイトルを生成
+      @title = result.data.search_works.edges.to_a.sample.node.title
+    # セッションにタイトルを保存
+      session[:title] = @title
+    else
+    # セッションからタイトルを読み込む
+      @title = session[:title]
+    end
     @user = current_user
+  end
+
+  def change_title
+    @user = current_user
+  # 新しいランダムなタイトルを生成
+    new_title = result.data.search_works.edges.to_a.sample.node.title
+  # セッションに新しいタイトルを保存
+    session[:title] = new_title
+  # ページをリダイレクト
+    redirect_to quest_path
   end
 
   # def change
@@ -63,7 +81,7 @@ class QuestsController < ApplicationController
   private
 
   def quest_params
-    params.require(:quest).permit(:id, :user_id)
+    params.require(:quest).permit(:id, :user_id, :change_count)
   end
 
   def user_params

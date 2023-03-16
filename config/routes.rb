@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'users/ranking' => 'users#rank', as: 'ranking'
 
   get 'quest' => 'quests#show', as: 'quest'
+  post 'change_title' => 'quests#change_title', as: 'change_title'
   # patch 'quest' => 'quests#change', as: 'change_count'
   patch 'quest' => 'quests#update', as: 'update_point'
   get 'quest_cleared' => 'quests#complete', as: 'complete'
