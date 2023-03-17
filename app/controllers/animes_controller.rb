@@ -29,7 +29,8 @@ class AnimesController < ApplicationController
   GRAPHQL
 
   def index
-    @animes = result.data.search_works.edges
+    @animes = result.data.search_works.edges.map(&:node)
+    @animes = Kaminari.paginate_array(@animes).page(params[:page]).per(100)
   end
 
   def year
