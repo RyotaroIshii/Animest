@@ -10,8 +10,14 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-start justify-content-center" style="height:200px; width:100%;">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto d-flex align-items-start justify-content-center">
       <p>この調子で頑張っていこう！</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6 px-auto mx-auto font-weight-bold d-flex align-items-end justify-content-center" style="height:200px; width:100%;">
+      <td class="text-right text-nowrap p-0"><u>獲得経験値</td>
+      <td class="p-0 pr-5"><%= @user.acquisition_point - 10 %> → <%= @user.acquisition_point %>ポイント</u></td>
     </div>
   </div>
   <div class="row py-4">

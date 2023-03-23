@@ -75,6 +75,7 @@ class QuestsController < ApplicationController
   end
 
   def complete
+    @user = current_user
   end
 
 
