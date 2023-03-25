@@ -71,6 +71,8 @@ class QuestsController < ApplicationController
     @user = current_user
     @user.acquisition_point += 10
     @user.save
+    new_title = result.data.search_works.edges.to_a.sample.node.title
+    session[:title] = new_title
     redirect_to complete_path
   end
 
