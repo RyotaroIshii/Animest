@@ -35,9 +35,6 @@
           </div>
         </div>
       </div>
-      <% @years.each do |year| %>
-        <%= link_to year.to_s, "anime?#{year}" %>
-      <% end %>
     </div>
   </div>
 </div>
@@ -53,7 +50,7 @@
           </tr>
         </thead>
         <% @animes.each.with_index(1) do |anime, i|%>
-        <tbody class="border-bottom border-top border-dark" id="<%= anime.season_year %>">
+        <tbody class="border-bottom border-top border-dark">
           <tr>
             <td>･<%= anime.title %></td>
             <td><%= anime.season_year %>年</td>
