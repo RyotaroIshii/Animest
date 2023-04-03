@@ -53,7 +53,7 @@
             <td>･<%= anime.title %></td>
             <td><%= anime.season_year %>年</td>
             <% if not anime.official_site_url == "" %>
-            <td class="text-center font-weight-bold official-site-url" data-toggle="modal" data-target="#animeModal<%= i %>">進む</td>
+            <td class="text-center font-weight-bold"><span class="official-site-url" data-toggle="modal" data-target="#animeModal<%= i %>">進む</span></td>
             <div class="modal fade" id="animeModal<%= i %>" tabindex="-1" role="dialog" aria-labelledby="animeModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
